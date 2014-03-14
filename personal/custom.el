@@ -108,6 +108,26 @@ This command is similar to `find-file-at-point' but without prompting for confir
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode 1))
 (define-key global-map (kbd "C-c c") 'org-capture)
+;; add to your ~/.emacs
+;; (or your ~/.emacs.d/init.el)
+
+(require 'clojure-mode)
+
+;; more aesthetic spacing for compojure macros
+(define-clojure-indent
+  (defroutes 'defun)
+  (context 'defun)
+  (GET 2)
+  (POST 2)
+  (PUT 2)
+  (DELETE 2)
+  (HEAD 2)
+  (ANY 2)
+  (context 2))
+
+(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljx\\'" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.edn\\'"  . clojure-mode))
 
 (setq org-capture-templates
       ; '(("Incoming" ?i "** %t: %?\n  %i\n  %a"  "Uncategorized")))
@@ -135,6 +155,15 @@ This command is similar to `find-file-at-point' but without prompting for confir
              (add-to-list
               'eshell-output-filter-functions
               'eshell-handle-ansi-color)))
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '( (perl . t)
+    (ruby . t)
+    (sh . t)
+    (python . t)
+    (emacs-lisp . t)
+    ))
+(setq org-confirm-babel-evaluate nil)
 (defun pivotal-open-story-on-web ()
   "Opens a Pivotal Story on the web when executed on a Story #"
   (interactive)
