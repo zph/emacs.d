@@ -13,8 +13,8 @@
          undo-tree
          window-number
          yasnippet
-                     icicles
-                     clojure-mode
+         icicles
+         clojure-mode
          ))
   (unless (package-installed-p package)
     (package-install package)))
