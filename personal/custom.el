@@ -31,19 +31,19 @@
         (require feature nil 'noerror)) 
         '(
           zph-authentication
-          zph-server-hooks
-          packages
-          term-config
-          pivotal-tracker-config
-          pivotal-tracker
+          zph-clojure
+          zph-erc-config
           zph-funcs
           zph-ido
-          zph-clojure
-          icicles
+          zph-packages
+          zph-pivotal-tracker-config
+          zph-server-hooks
+          zph-term-config
           clojure-mode
-          org-install
+          icicles
           ob-tangle
-          zph-erc-config
+          org-install
+          pivotal-tracker
           ))
 ;; end auto-install/require packages
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,4 +1,4 @@
-;;; pivotal-tracker-config.el --- Configs
+;;; zph-pivotal-tracker-config.el --- Configs
 (defun pivotal-open-story-on-web ()
   "Opens a Pivotal Story on the web when executed on a Story #"
   (interactive)
@@ -9,5 +9,5 @@
      ;(shell-command (concat "open x-devonthink-item:" record-location))
 (global-set-key "\C-c\C-p" 'pivotal-open-story-on-web)
 (load "~/src/pivotal-tracker/pivotal-tracker")
-(provide 'pivotal-tracker-config)
-;;; pivotal-tracker-config.el ends here
+(provide 'zph-pivotal-tracker-config)
+;;; zph-pivotal-tracker-config.el ends here

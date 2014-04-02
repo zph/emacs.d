@@ -1,4 +1,4 @@
-;;; term-config.el --- Configurations for Term
+;;; zph-term-config.el --- Configurations for Term
 (when (require 'multi-term nil t)
   (global-set-key (kbd "<f5>") 'multi-term)
   (global-set-key (kbd "<C-next>") 'multi-term-next)
@@ -29,5 +29,5 @@
   (tty-set-up-initial-frame-faces))
 
 (add-hook 'term-mode-hook 'evil-emacs-state)
-(provide 'term-config)
-;;; term-config.el ends here
+(provide 'zph-term-config)
+;;; zph-term-config.el ends here
