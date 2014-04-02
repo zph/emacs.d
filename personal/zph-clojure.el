@@ -8,6 +8,8 @@
 
 ;;; Code:
 
+(setq nrepl-hide-special-buffers t)
+
 (define-clojure-indent
   (defroutes 'defun)
   (context 'defun)

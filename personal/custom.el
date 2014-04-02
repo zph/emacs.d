@@ -30,12 +30,14 @@
 (mapc (lambda (feature)
         (require feature nil 'noerror)) 
         '(
+          zph-packages
           zph-authentication
           zph-clojure
           zph-erc-config
           zph-funcs
           zph-ido
-          zph-packages
+          zph-keybindings
+          zph-osx
           zph-pivotal-tracker-config
           zph-server-hooks
           zph-term-config
@@ -44,6 +46,7 @@
           ob-tangle
           org-install
           pivotal-tracker
+          yasnippet
           ))
 ;; end auto-install/require packages
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -53,17 +56,10 @@
 (setq frame-title-format "%b")		; use buffer name for title
 (setq display-buffer-reuse-frames t)    ; no new frame if already open
 ;; use this shell alias for emacs to run emacsclient unless emacs not running, then run server
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
 ;;(load-theme 'base16-railscasts t)
 (load-theme 'sanityinc-tomorrow-bright t)
 (global-hl-line-mode -1)
 (setq tab-width 2)
-;; Clojure
-(setq nrepl-hide-special-buffers t)
-;; Display ido results vertically, rather than horizontally
-(global-set-key (kbd "C-x f") 'ido-find-file)
-(global-set-key (kbd "C-x C-f") 'ido-find-file)
 
 (defmacro global-defkey (key def)
     "*Bind KEY globally to DEF.
@@ -76,20 +72,14 @@
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
-(global-set-key (kbd "M-p") 'shell-command)
 (require 'ob-sml nil 'noerror)
-(global-set-key (kbd "<f12>") 'whitespace-mode)
 (whitespace-mode -1)
 (setq org-hide-leading-stars t)
 (add-hook 'org-mode-hook (lambda () (
   ;;(global-set-key (kbd "\C-c \'") 'org-edit-src-code)
 )))
-(global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode 1))
-(define-key global-map (kbd "C-c c") 'org-capture)
 
 (setq org-capture-templates
       ; '(("Incoming" ?i "** %t: %?\n  %i\n  %a"  "Uncategorized")))
@@ -103,7 +93,6 @@
        "- %?\n %x\n")
   )
 )
-(global-set-key (kbd "<f8>") 're-builder) ; helps with building regexes
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 ;; This will transform ansi color to faces in Emacs shell!
 (ansi-color-for-comint-mode-on)
@@ -128,7 +117,6 @@
 (set-face-attribute 'default nil :font "Source Code Pro-13")
 
 ;;(match-string "(dev)" "rr,stuff_dev_t,more")
-(require 'yasnippet)
 (yas-global-mode 1)
 
 ;; fix some org-mode + yasnippet conflicts:
