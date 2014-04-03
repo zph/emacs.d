@@ -3,7 +3,7 @@
 ;;; Commentary:
 ;; 
 
-(global-set-key (kbd "C-x f") 'ido-find-file)
+(global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "C-x C-f") 'ido-find-file)
 (global-set-key (kbd "M-p") 'shell-command)
 (global-set-key (kbd "<f12>") 'whitespace-mode)

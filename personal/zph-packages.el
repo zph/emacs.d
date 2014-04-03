@@ -5,6 +5,8 @@
          evil
          evil-leader
          evil-numbers
+         evil-nerd-commenter
+         surround
          expand-region
          fastnav
          magit
@@ -15,6 +17,8 @@
          yasnippet
          icicles
          clojure-mode
+         fasd
+         grizzl
          ))
   (unless (package-installed-p package)
     (package-install package)))

@@ -35,6 +35,7 @@
           zph-authentication
           zph-clojure
           zph-erc-config
+          zph-evil-config
           zph-funcs
           zph-ido
           zph-keybindings
