@@ -1,4 +1,7 @@
 ;;; zph-pivotal-tracker-config.el --- Configs
+
+;;; Commentary:
+
 (defun pivotal-open-story-on-web ()
   "Opens a Pivotal Story on the web when executed on a Story #"
   (interactive)
@@ -11,3 +14,4 @@
 (load "~/src/pivotal-tracker/pivotal-tracker")
 (provide 'zph-pivotal-tracker-config)
 ;;; zph-pivotal-tracker-config.el ends here
+

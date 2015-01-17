@@ -32,18 +32,18 @@ KEY should be a string in the format used for saving keyboard
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode 1))
 
-(setq org-capture-templates
-      ; '(("Incoming" ?i "** %t: %?\n  %i\n  %a"  "Uncategorized")))
-  '(
-    ("n" "Notes" entry (file+datetree "~/Dropbox/org_mode/incoming.org")
-    "* %^{Description} %^g %?
-    Added: %U")
-    ("t" "Todo" entry (file+headline (concat org-directory "/incoming.org") "Tasks")
-       "* TODO %?\n %i\n")
-      ("l" "Link" plain (file (concat org-directory "/incoming.org"))
-       "- %?\n %x\n")
-  )
-)
+;;(setq org-capture-templates
+;;      ; '(("Incoming" ?i "** %t: %?\n  %i\n  %a"  "Uncategorized")))
+;;  '(
+;;    ("n" "Notes" entry (file+datetree "~/Dropbox/org_mode/incoming.org")
+;;    "* %^{Description} %^g %?
+;;    Added: %U")
+;;    ("t" "Todo" entry (file+headline (concat org-directory "/incoming.org") "Tasks")
+;;       "* TODO %?\n %i\n")
+;;    ("l" "Link" plain (file (concat org-directory "/incoming.org"))
+;;       "- %?\n %x\n")
+;;  )
+;;)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 ;; This will transform ansi color to faces in Emacs shell!
 (ansi-color-for-comint-mode-on)

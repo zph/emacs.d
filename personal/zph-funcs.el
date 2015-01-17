@@ -24,6 +24,12 @@ This command is similar to `find-file-at-point' but without prompting for confir
             (progn
               (when (y-or-n-p (format "File doesn't exist: 「%s」.  Create? " path) )
                 (progn (find-file path ))) ) ) ) ) ) ))
+(defun reload-emacs-config ()
+    "reload your .emacs file without restarting Emacs"
+    ;; Source: comment at http://www.saltycrane.com/blog/2007/07/how-to-reload-your-emacs-file-while/
+    (interactive)
+    (load-file "~/.emacs.d/init.el") )
+
 (provide 'zph-funcs)
 
 ;;; zph-funcs.el ends here

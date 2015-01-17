@@ -6,6 +6,7 @@
 (global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "C-x C-f") 'ido-find-file)
 (global-set-key (kbd "M-p") 'shell-command)
+(global-set-key (kbd "C-x b") 'switch-to-buffer)
 (global-set-key (kbd "<f12>") 'whitespace-mode)
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)

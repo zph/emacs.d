@@ -6,13 +6,14 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
- '(custom-safe-themes (quote ("a3d519ee30c0aa4b45a277ae41c4fa1ae80e52f04098a2654979b1ab859ab0bf" "41b6698b5f9ab241ad6c30aea8c9f53d539e23ad4e3963abff4b57c0f8bf6730" "de2c46ed1752b0d0423cde9b6401062b67a6a1300c068d5d7f67725adc6c3afb" "e53cc4144192bb4e4ed10a3fa3e7442cae4c3d231df8822f6c02f1220a0d259a" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" "978ff9496928cc94639cb1084004bf64235c5c7fb0cfbcc38a3871eb95fa88f6" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "f41fd682a3cd1e16796068a2ca96e82cfd274e58b978156da0acce4d56f2b0d5" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" "2b5aa66b7d5be41b18cc67f3286ae664134b95ccc4a86c9339c886dfd736132d" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-bright)))
+ '(custom-safe-themes (quote ("53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" "70cf411fbf9512a4da81aa1e87b064d3a3f0a47b19d7a4850578c8d64cac2353" "4a60f0178f5cfd5eafe73e0fc2699a03da90ddb79ac6dbc73042a591ae216f03" "a53714de04cd4fdb92ed711ae479f6a1d7d5f093880bfd161467c3f589725453" "a3d519ee30c0aa4b45a277ae41c4fa1ae80e52f04098a2654979b1ab859ab0bf" "41b6698b5f9ab241ad6c30aea8c9f53d539e23ad4e3963abff4b57c0f8bf6730" "de2c46ed1752b0d0423cde9b6401062b67a6a1300c068d5d7f67725adc6c3afb" "e53cc4144192bb4e4ed10a3fa3e7442cae4c3d231df8822f6c02f1220a0d259a" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" "978ff9496928cc94639cb1084004bf64235c5c7fb0cfbcc38a3871eb95fa88f6" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "f41fd682a3cd1e16796068a2ca96e82cfd274e58b978156da0acce4d56f2b0d5" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" "2b5aa66b7d5be41b18cc67f3286ae664134b95ccc4a86c9339c886dfd736132d" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
  '(erc-stamp-mode t)
+ '(ledger-reports (quote (("balance" "ledger ") ("bal" "ledger -f %(ledger-file) bal") ("reg" "ledger -f %(ledger-file) reg") ("payee" "ledger -f %(ledger-file) reg @%(payee)") ("account" "ledger -f %(ledger-file) reg %(account)"))))
  '(org-datetree-add-timestamp (quote inactive))
  '(org-default-notes-file "~/Dropbox/org_mode/incoming.org")
  '(org-directory "~/Dropbox/org_mode/")
  '(org-startup-truncated nil)
- '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -27,32 +28,39 @@
 ;; Start of ZPH configs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Require various subfiles/namespaces: add them to '(list)
+(server-start)
 (mapc (lambda (feature)
         (require feature nil 'noerror))
         '(
           zph-packages
-          zph
-          zph-authentication
-          zph-clojure
-          zph-erc-config
-          zph-evil-config
-          zph-funcs
-          zph-ido
-          zph-keybindings
-          zph-osx
-          zph-pivotal-tracker-config
-          zph-server-hooks
-          zph-term-config
-          clojure-mode
-          icicles
-          ob-tangle
-          org-install
-          pivotal-tracker
-          yasnippet
+          zph-use-package
           ))
 ;; end auto-install/require packages
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; TODO: relocate if I keep using emmet mode
+(global-pretty-mode t)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)
+   (ditaa . t)
+   (dot . t)
+   (emacs-lisp . t)
+   (gnuplot . t)
+   (haskell . nil)
+   (latex . t)
+   (ledger . t)         ;this is the important one for this tutorial
+   (ocaml . nil)
+   (octave . t)
+   (python . t)
+   (ruby . t)
+   (screen . nil)
+   (sh . t)
+   (sql . nil)
+   (sqlite . t)))
+(setq sentence-end-double-space nil)  ;; because it's 2015 and double spaces after period are passe
 (provide 'custom)
 ;;;END CUSTOM
