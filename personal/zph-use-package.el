@@ -54,7 +54,10 @@
                      zph-haskell
                      zph-ido
                      zph-keybindings
+<<<<<<< HEAD
                      zph-junk-drawer
+=======
+>>>>>>> 080a77e... FIX: `coffee-mode` uses `coffee-tab-width` instead of `tab-width`.
                      zph-osx
                      zph-pivotal-tracker-config
                      zph-server-hooks
