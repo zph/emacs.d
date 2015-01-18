@@ -13,6 +13,7 @@
                       fastnav
                       ghc
                       grizzl
+                      hs-lint
                       isend-mode
                       magit
                       ob-tangle

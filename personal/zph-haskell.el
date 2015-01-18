@@ -11,8 +11,8 @@
 ;; (add-hook 'haskell-mode-hook 'ghc-init)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
 
-(load "~/.emacs.d/personal/hs-lint.el")
-(require 'hs-lint)
+;;(load "~/.emacs.d/personal/hs-lint.el")
+;;(require 'hs-lint)
 
 (custom-set-variables '(haskell-tags-on-save t))
 

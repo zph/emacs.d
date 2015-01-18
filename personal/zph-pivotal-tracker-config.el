@@ -11,7 +11,7 @@
     (shell-command (concat "open https://www.pivotaltracker.com/story/show/" link-name))))
      ;(shell-command (concat "open x-devonthink-item:" record-location))
 (global-set-key "\C-c\C-p" 'pivotal-open-story-on-web)
-(load "~/src/pivotal-tracker/pivotal-tracker")
+;;(load "~/src/pivotal-tracker/pivotal-tracker")
 (provide 'zph-pivotal-tracker-config)
 ;;; zph-pivotal-tracker-config.el ends here
 
