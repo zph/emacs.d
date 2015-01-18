@@ -22,6 +22,9 @@
 (define-key evil-normal-state-map (kbd ",f") 'projectile-find-file)
 (define-key evil-normal-state-map (kbd ",,") 'evil-buffer)
 (define-key evil-normal-state-map (kbd ",e") 'emmet-expand-line)
+(define-key evil-visual-state-map (kbd ",.") 'zph/comment-or-uncomment-region-or-line)
+(define-key evil-normal-state-map (kbd ",.") 'zph/comment-or-uncomment-region-or-line)
+
 ;;Exit insert mode by pressing j and then j quickly
 ;; (setq key-chord-two-keys-delay 0.2)
 ;; (key-chord-define-global "jj" nil)

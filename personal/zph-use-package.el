@@ -13,6 +13,7 @@
                       fastnav
                       ghc
                       grizzl
+                      highlight-chars
                       hs-lint
                       isend-mode
                       magit
@@ -55,10 +56,7 @@
                      zph-haskell
                      zph-ido
                      zph-keybindings
-<<<<<<< HEAD
                      zph-junk-drawer
-=======
->>>>>>> 080a77e... FIX: `coffee-mode` uses `coffee-tab-width` instead of `tab-width`.
                      zph-osx
                      zph-pivotal-tracker-config
                      zph-server-hooks
@@ -66,6 +64,7 @@
                      zph-deft
                      zph-org-agenda
                      zph-org-expiry
+                     zph-whitespace-mode
                      pivotal-tracker
                      ))
     (use-package package

@@ -30,6 +30,16 @@ This command is similar to `find-file-at-point' but without prompting for confir
     (interactive)
     (load-file "~/.emacs.d/init.el") )
 
+(defun zph/comment-or-uncomment-region-or-line ()
+  ;; Credit: @Gerstmann http://stackoverflow.com/a/9697222/1930671
+    "Comments or uncomments the region or the current line if there's no active region."
+    (interactive)
+    (let (beg end)
+        (if (region-active-p)
+            (setq beg (region-beginning) end (region-end))
+            (setq beg (line-beginning-position) end (line-end-position)))
+        (comment-or-uncomment-region beg end)))
+
 (provide 'zph-funcs)
 
 ;;; zph-funcs.el ends here
