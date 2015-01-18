@@ -54,6 +54,7 @@
                      zph-haskell
                      zph-ido
                      zph-keybindings
+                     zph-junk-drawer
                      zph-osx
                      zph-pivotal-tracker-config
                      zph-server-hooks
